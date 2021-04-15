@@ -27,6 +27,7 @@ The student will then receive the role of "student" and can compose messages and
 ### Discord-API
 - Create a Discord-Application at https://discord.com/developers/applications
 - Create a Bot with the name `Registration`
+- Activate `Server Members Intent`
 - Copy the Token and Save modify the first line in `tokens.py`
 - Go to the OAuth2 Section:
     - Set the scope to `bot`

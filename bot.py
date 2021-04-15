@@ -27,6 +27,8 @@ CSV_FILE = "registration_keys.csv"
 logging.basicConfig(filename='bot.log', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
+intents = discord.Intents.default()
+intents.members = True
 
 class RegistrationClient(discord.Client):
     async def on_ready(self):
@@ -47,8 +49,7 @@ class RegistrationClient(discord.Client):
         print("BOT IS RUNNING!")
     
     # Automatic message when a user joins the chat
-    # Does not work? Still don't know why
-    '''
+    
     async def on_member_join(self, member):
         logging.info(f"{member.name} joined the server")
         await member.create_dm()
@@ -56,14 +57,18 @@ class RegistrationClient(discord.Client):
 🇬🇧: Hi {member.name}, welcome to the 'Grundlagen der Bioinformatik' @ Uni Tübingen Discord Server.
 Please register with your student email address.
 You can do this by sending your email here in the chat.
-You will then be sent a token.
+You will then be sent a token. Please send this token to me (the bot).
+
+Ps: Please change your nick-name to your real name :)
 
 🇩🇪: Hi {member.name}, willkommen auf dem 'Grundlagen der Bioinformatik' @ Uni Tübingen Discord Server.
 Bitte registriere dich mit deiner studentischen Email-Adresse.
 Dies kannst du tun indem du deine Email hier in den chat schickst. 
-Dir wird dann ein Token zugeschickt.
+Dir wird dann ein Token zugeschickt. Bitte sende Diesen direkt an mich (den Bot).
+
+Ps.: Bitte ändere deinen Nick-Name zu deinem echten Namen :)
 """)
-    '''
+    
 
     async def on_message(self, message):
         # don't respond to ourselves
@@ -241,5 +246,5 @@ Bitte kopiere diesen Token und sende ihn direkt zum Registrierungs-Bot.
             return
         await cnl.send("You have been verified. You will be given student access. / Du wurdest verifiziert. Du erhällst nun die Rechte eines Studierendens")
 
-bot = RegistrationClient()
+bot = RegistrationClient(intents=intents)
 bot.run(TOKEN)
