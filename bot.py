@@ -15,7 +15,7 @@ See: https://github.com/not-a-feature/Discord-Registration-Bot
 License: GPL-3.0
 '''
 
-GUILD = 'TestserverGBI'
+GUILD = 'Grundlagen der Bioinformatik'
 STUDENT_ROLE = 'Studierende'
 REGEXMAIL = "((\w{1,25})(-\w{1,25})?)\.(\w{1,25})(-\w{1,25})?@student\.uni-tuebingen\.de"
 SMTP_SERVER = "smtpserv.uni-tuebingen.de"
@@ -205,11 +205,17 @@ Bitte kopiere diesen Token und sende ihn direkt zum Registrierungs-Bot.
 
     async def verify(self, message, cont):
         cnl  = message.channel
-
-        if not cont[4:][:-17] == str(message.author.id):
+        contArr = cont.split("-")
+        if not len(contArr) == 3:
+            logging.warning(f'Wrong token format! {cont} from {message.author.id}')
+            await cnl.send("Wrong token format! Please copy the whole token. / Falsches token format! Botte kopiere den ganzen Token.")
+            return
+        
+        if not contArr[1] == str(message.author.id):
             logging.warning(f'Wrong user-id! May be a hacking attempt: {cont} from {message.author.id}')
             await cnl.send("This token doesn't belong to you! / Dieser Token gehört dir nicht!")
             return
+        
         newFileContent = []
         tokenFound = False
         try:
@@ -220,9 +226,10 @@ Bitte kopiere diesen Token und sende ihn direkt zum Registrierungs-Bot.
                     logging.debug(f'Token found.')
                 else:
                     newFileContent.append(line)
+        
         except Exception as e:
             logging.warning(f'Could read token file. Error: {e}')
-
+        
         if not tokenFound:
             logging.warning(f'Token not found.')
             await cnl.send("Wrong or unknown token. Please try again or contact an Admin / Falscher oder unbekante token. Bitte probiere es noch einmal oder kontaktiere an Admin")
