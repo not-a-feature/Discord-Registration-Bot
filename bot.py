@@ -192,10 +192,10 @@ Bitte kopiere diesen Token und sende ihn direkt zum Registrierungs-Bot.
             logging.debug(f'Start saving token: {longToken}')
             for line in open(CSV_FILE, "r"):
                 if not line.startswith(shortToken):
-                    newFileContent.append(line + "\n")
+                    newFileContent.append(line)
             
             # Write new Token
-            newFileContent.append(longToken)
+            newFileContent.append(longToken + "\n")
             with open(CSV_FILE, "w") as f:
                 f.writelines(newFileContent)
             logging.info(f'Token was saved: {longToken}')
