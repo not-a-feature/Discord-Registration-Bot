@@ -17,7 +17,7 @@ License: GPL-3.0
 
 GUILD = 'Grundlagen der Bioinformatik'
 STUDENT_ROLE = 'Studierende'
-REGEXMAIL = "((\w{1,25})(-\w{1,25})?)\.(\w{1,25})(-\w{1,25})?@student\.uni-tuebingen\.de"
+REGEXMAIL = "((\w{1,25})(-\w{1,25})*)\.(\w{1,25})(-\w{1,25})?@student\.uni-tuebingen\.de"
 SMTP_SERVER = "smtpserv.uni-tuebingen.de"
 SMTP_PORT = 587  # starttls
 SMTP_SENDER = "jules.kreuer@student.uni-tuebingen.de"
@@ -79,7 +79,7 @@ Ps.: Bitte ändere deinen Nick-Name zu deinem echten Namen :)
         logging.info(f'New Message from {message.author}: {cont}')
 
         if cont in ['!stats', '!ping']:
-            await cnl.send(f"pong with {str(round(self.latency, 2))} ms latency")
+            await cnl.send(f"pong with {str(round(self.latency, 3))} s latency")
             await cnl.send(f"{str(len(open(CSV_FILE).readlines()))} pending registrations")
             return
         
