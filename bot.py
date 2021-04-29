@@ -17,7 +17,7 @@ License: GPL-3.0
 
 GUILD = 'Grundlagen der Bioinformatik'
 STUDENT_ROLE = 'Studierende'
-REGEXMAIL = "((\w{1,25})(-\w{1,25})*)\.(\w{1,25})(-\w{1,25})?@student\.uni-tuebingen\.de"
+REGEXMAIL = "((\w{1,25})(-\w{1,25})*)\.?(\w{1,25})(-\w{1,25})*@student\.uni-tuebingen\.de"
 SMTP_SERVER = "smtpserv.uni-tuebingen.de"
 SMTP_PORT = 587  # starttls
 SMTP_SENDER = "jules.kreuer@student.uni-tuebingen.de"
