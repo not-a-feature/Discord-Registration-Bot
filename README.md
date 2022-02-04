@@ -49,7 +49,7 @@ The student will then receive the role of "student" and can compose messages and
     - Set `REGEXMAIL` to a regex of valid / accepted emails
     - Set all `SMTP_` variables accourding to the smtp-server settings
     - Set `CSV_FILE` to the path where the keys will be stored.
-    - Set `TOKEN_PREFIX` to a good prefix for the token (Example: "token")
+    - Set `TOKEN_PREFIX` to a good prefix for the token (Example: "token"). This prefix shall not contain a dash "-".
     - Set `GUILD_APPENDIX` to your organisation (Example: Uni Tübingen) 
     - Set `ADMIN_NAME` to the discord name of an admin.
     - Set `VERBOSE_EMAIL_REGEX` to a valid example email.
