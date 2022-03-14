@@ -1,4 +1,6 @@
 # Discord-Registration-Bot
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) 
+A bot to restrict access to a Discord server and grant access after a successful registration with the university email.
 This bot was created for the Lecture "Grundlagen der Bioinformatik" in SS 2021 at the University of Tübingen.
 
 ## What does this bot do?
@@ -17,7 +19,7 @@ The student will then receive the role of "student" and can compose messages and
 - Create a Discord-server
 - Create a Role for the students
 - Remove all permissions of the role `@everyone`
-- Create a channel called registration
+- Create a channel called `registration`
 - Send a message in this channel welcoming the students and advising them to send their email address to the bot.
 - Modify the permissions of the registration channel for `@everyone`:
     - Turn everything off
@@ -57,7 +59,8 @@ The student will then receive the role of "student" and can compose messages and
 
 - Set your SMTP email password in the `tokens.py` file
 - Install the python `discord` package: `pip install discord`
-- Your done :)
+- Your done. :)
+
 ### Usage
 - Run the python-script
 - You may want to create a cron-job that kills the bot every 12 hours and restarts it. This should prevent some bugs and limit downtime.
@@ -65,7 +68,6 @@ The student will then receive the role of "student" and can compose messages and
 ## Limitations
 - This bot will work fine with a small amount (lets say 300) of students. For a more sophisticated bot check out:  https://github.com/jensengillett/verificationbot
 - The performance is ok, but not excellent.
-- Currently, there is no database connection, the temporary tokens are saved in a csv-file.
+- No database connection, the temporary tokens are saved in a csv-file.
 - No Brute-Force-Protection
-- No Banned email adressed.
-- Developed in less than 6 hours --> Shitty Code :)
+- No Banned email adresses

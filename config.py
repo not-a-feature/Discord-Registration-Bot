@@ -3,9 +3,13 @@
 # Specials Chars like ü/ö should not be used.
 # If its needed change the Content-Type of in the MAIL function to utf8
 
+# Name of the Server.
 GUILD = "Grundlagen der Bioinformatik"
+# Name of the role the students should get.
 STUDENT_ROLE = "Studierende"
+# Regular Expression of the students email adress.
 REGEXMAIL = "((\w{1,25})(-\w{1,25})*)\.?(\w{1,25})(-\w{1,25})*@student\.uni-tuebingen\.de"
+# SMTP Server credentials
 SMTP_SERVER = "smtpserv.uni-tuebingen.de"
 SMTP_PORT = 587  # starttls
 SMTP_SENDER = "jules.kreuer@student.uni-tuebingen.de"
@@ -22,11 +26,14 @@ LOGFILE_PATH = "bot.log"
 
 
 #########
+# Some info that is included in the messages.
 GUILD_APPENDIX = " @ Uni Tuebingen"  # Can be empty
 ADMIN_NAME = "Jules"
 VERBOSE_EMAIL_REGEX = "first.lastname@student.uni-tuebingen.de"
 #########
 
+#########
+# Messages to the students in english and german.
 
 # Registration email
 def MAIL(token):
@@ -73,8 +80,6 @@ Ps.: Bitte ändere deinen Nick-Name zu deinem echten Namen :)"""
 
 
 # Help message
-
-
 HELP_MSG = f"""\
 🇬🇧: This bot is used to register students on this Discord server and is intended
 to prevent abuse (as far as possible).
@@ -132,6 +137,7 @@ SUCCESS_SETTING_ROLE = """\
 🇩🇪: Du wurdest verifiziert. Du erhällst nun die Rechte eines Studierendens."""
 
 #########
+# Error messages
 
 # Error sending email
 ERROR_SENDING = """\
