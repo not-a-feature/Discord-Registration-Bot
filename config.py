@@ -3,8 +3,8 @@
 # Specials Chars like ü/ö should not be used.
 # If its needed change the Content-Type of in the MAIL function to utf8
 
-GUILD = 'Grundlagen der Bioinformatik'
-STUDENT_ROLE = 'Studierende'
+GUILD = "Grundlagen der Bioinformatik"
+STUDENT_ROLE = "Studierende"
 REGEXMAIL = "((\w{1,25})(-\w{1,25})*)\.?(\w{1,25})(-\w{1,25})*@student\.uni-tuebingen\.de"
 SMTP_SERVER = "smtpserv.uni-tuebingen.de"
 SMTP_PORT = 587  # starttls
@@ -30,7 +30,7 @@ VERBOSE_EMAIL_REGEX = "first.lastname@student.uni-tuebingen.de"
 
 # Registration email
 def MAIL(token):
-        return f"""\
+    return f"""\
 From: "{GUILD} Registration Bot" <{SMTP_SENDER}>
 Reply-to: {SMTP_SENDER}
 Subject: {GUILD} Registration
@@ -70,6 +70,7 @@ Dir wird dann ein Token zugeschickt. Bitte sende Diesen direkt an mich (den Bot)
 
 Ps.: Bitte ändere deinen Nick-Name zu deinem echten Namen :)"""
     return msg
+
 
 # Help message
 
