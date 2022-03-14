@@ -1,5 +1,7 @@
 # Discord-Registration-Bot
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) 
+![License](https://img.shields.io/github/license/not-a-feature/Discord-Registration-Bot)
+
 A bot to restrict access to a Discord server and grant access after a successful registration with the university email.
 This bot was created for the Lecture "Grundlagen der Bioinformatik" in SS 2021 at the University of Tübingen.
 
